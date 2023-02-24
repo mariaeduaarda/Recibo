@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recibos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
 </head>
 <body>
     <div class="dados">
@@ -26,19 +27,5 @@
         <br/> <br/>
         <div class="assinatura">Assinatura</div>
     </div>
-    <script>
-        function gerarRecibo() {
-            document.getElementById('recibo_emitente').innerHTML = document.getElementById('emitente').value;
-            document.getElementById('recibo_nome').innerHTML = document.getElementById('nome').value;
-            document.getElementById('recibo_valor').innerHTML = parseFloat(document.getElementById('valor').value).toLocaleString('pt-br', {maximumFractionDigits: 2});
-            window.print();
-            document.getElementById('recibo_data').innerHTML = dataAtual();
-        }
-
-        function dataAtual() {
-            let data = new Date();
-            return data.getDate() + "/" + (data.getMonth()+1) + "/" + data.getFullYear();
-        }
-    </script>
 </body>
 </html>
